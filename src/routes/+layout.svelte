@@ -1,7 +1,11 @@
 <script>
-	import '../app.css';
+	import '../app.scss';
 	import { beforeNavigate } from '$app/navigation';
 	import { updated } from '$app/stores';
+	import { setupIonicBase } from 'ionic-svelte';
+	import 'ionic-svelte/components/all';
+
+	setupIonicBase();
 
 	// In the event the app is open during a deployment, this will force a
 	// reload on the next navigation (poll interval via svelte.config.js).
@@ -13,4 +17,6 @@
 	});
 </script>
 
-<slot></slot>
+<ion-app>
+	<slot />
+</ion-app>
