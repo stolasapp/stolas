@@ -29,7 +29,7 @@
 		"globals": "^15.0.0",
 		"ionic-svelte": "^0.5.85",
 		"prettier": "^3.1.1",
-		"prettier-plugin-svelte": "^3.1.2",
+		"prettier-plugin-svelte": "^3.2.7",
 		"sass-embedded": "^1.79.3",
 		"svelte": "^4.2.7",
 		"svelte-check": "^4.0.0",
