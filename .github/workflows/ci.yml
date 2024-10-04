@@ -21,22 +21,6 @@ jobs:
         run: npm install
       - name: Lint
         run: npm run lint
-  check:
-    name: Check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Install Node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: npm
-          cache-dependency-path: package-lock.json
-      - name: Install Dependencies
-        run: npm install
-      - name: Check
-        run: npm run check
   test:
     name: Test
     runs-on: ubuntu-latest
@@ -51,7 +35,7 @@ jobs:
           cache-dependency-path: package-lock.json
       - name: Install Dependencies
         run: npm install
-      - name: Install Playwright Dependencies
-        run: npx playwright install --with-deps
+      - name: Install Cypress Dependencies
+        run: npx cypress install
       - name: Test
         run: npm run test

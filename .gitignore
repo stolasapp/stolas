@@ -1,22 +1,26 @@
-node_modules
+# dependencies
+/node_modules
 
-# Output
-.output
-.vercel
-/.svelte-kit
-/build
-test-results/
+# testing
+/coverage
+/cypress/screenshots
 
-# OS
+# production
+/dist
+
+# misc
 .DS_Store
-Thumbs.db
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+/.nx
+/.nx/cache
+/.vscode/*
+!/.vscode/extensions.json
+.idea
 
-# Env
-.env
-.env.*
-!.env.example
-!.env.test
+npm-debug.log*
 
-# Vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
+# Optional eslint cache
+.eslintcache

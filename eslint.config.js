@@ -1,33 +1,16 @@
-import js from '@eslint/js';
-import ts from 'typescript-eslint';
-import svelte from 'eslint-plugin-svelte';
-import prettier from 'eslint-config-prettier';
 import globals from 'globals';
+import pluginJs from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import pluginReact from 'eslint-plugin-react';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
-/** @type {import('eslint').Linter.Config[]} */
 export default [
-	js.configs.recommended,
-	...ts.configs.recommended,
-	...svelte.configs['flat/recommended'],
-	prettier,
-	...svelte.configs['flat/prettier'],
-	{
-		languageOptions: {
-			globals: {
-				...globals.browser,
-				...globals.node
-			}
-		}
-	},
-	{
-		files: ['**/*.svelte'],
-		languageOptions: {
-			parserOptions: {
-				parser: ts.parser
-			}
-		}
-	},
-	{
-		ignores: ['build/', '.svelte-kit/', 'dist/', 'test-results/']
-	}
+	{ files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
+	{ languageOptions: { globals: globals.browser } },
+	pluginJs.configs.recommended,
+	...tseslint.configs.recommended,
+	pluginReact.configs.flat.recommended,
+	pluginReact.configs.flat['jsx-runtime'],
+	eslintPluginPrettierRecommended,
+	{ ignores: ['dist/', 'node_modules/'] }
 ];

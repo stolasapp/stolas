@@ -1,10 +1,21 @@
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vitest/config';
+/// <reference types="vitest" />
 
+import legacy from '@vitejs/plugin-legacy';
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
+
+// https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [sveltekit()],
+	plugins: [react(), legacy()],
 	test: {
-		include: ['src/**/*.{test,spec}.{js,ts}']
+		globals: true,
+		environment: 'jsdom',
+		setupFiles: './src/setupTests.ts'
+	},
+	build: {
+		rollupOptions: {
+			input: ['index.html', '404.html']
+		}
 	},
 	esbuild: {
 		drop: ['debugger'],

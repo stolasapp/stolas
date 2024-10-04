@@ -1,0 +1,17 @@
+{
+	"welcome": {
+		"start": {
+			"page.title": "Welcome",
+			"title": "Welcome to Stolas!",
+			"subtitle": "A Mobile-First Matrix Client",
+			"sign_in": "Sign in",
+			"create_account": "Create account"
+		},
+		"sign_in": {
+			"page.title": "Sign in",
+			"title": "Sign in",
+			"server": "Server",
+			"continue": "Continue"
+		}
+	}
+}
