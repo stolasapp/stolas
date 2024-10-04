@@ -42,7 +42,11 @@ const SignIn: React.FC<SignInProps> = ({ server = 'matrix.org' }) => {
 						<IonCardTitle>Homeserver</IonCardTitle>
 					</IonCardHeader>
 					<IonCardContent>
-						<IonInput label={t('welcome.sign_in.server')} labelPlacement="floating" value={server} />
+						<IonInput
+							label={t('welcome.sign_in.server')}
+							labelPlacement="floating"
+							value={server}
+						/>
 						<IonButton expand="block">
 							{t('welcome.sign_in.continue')}
 							<IonIcon icon={arrowForward} slot="end" />
